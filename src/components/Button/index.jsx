@@ -1,9 +1,13 @@
-function Button() {
-    return (
-        <div>
-            <h1>Clique em min</h1>
-        </div>
-    )
+import { auth } from "../../firebase/config";
+import { signOut } from "firebase/auth";
+
+function Logout({ user }) {
+  return (
+    <>
+      <h2>Olá {user.displayName}</h2>
+      <button onClick={() => signOut(auth)}>Sair</button>
+    </>
+  );
 }
 
-export default Button
+export default Logout;
